@@ -203,7 +203,7 @@ Essas limitações representam oportunidades para futuras melhorias.
 
 Estudante e desenvolvedor em formação, com interesse em desenvolvimento de software e aprendizado contínuo.
 
-**GitHub:** [filipepereiradossantos](https://github.com/filipepereiradossantos)
+**GitHub:** [filipepereiradossantos](https://github.com/pereiralp)
 
 ---
 
