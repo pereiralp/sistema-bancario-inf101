@@ -1,84 +1,199 @@
-# 🏦 Sistema Bancário em C++
 
-![Linguagem](https://img.shields.io/badge/Linguagem-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![Tipo](https://img.shields.io/badge/Projeto-Acadêmico-2E8B57?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Concluído-brightgreen?style=for-the-badge)
+# 🏦 Banco INF101 — Sistema Bancário em C++
+
+![C++](https://img.shields.io/badge/Linguagem-C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![Projeto acadêmico](https://img.shields.io/badge/Projeto-Acad%C3%AAmico-34675C?style=for-the-badge)
+![Etapas](https://img.shields.io/badge/Etapas-3-2563EB?style=for-the-badge)
 
 ## 📌 Sobre o projeto
 
-O **Sistema Bancário** é um projeto acadêmico desenvolvido em **C++**, com o objetivo de aplicar conceitos fundamentais de programação por meio da simulação de operações bancárias.
+O **Banco INF101** é um sistema bancário desenvolvido em C++ como trabalho acadêmico da disciplina **INF101 — Programação de Computadores I**, do **Centro Universitário de Viçosa (UNIVIÇOSA)**.
 
-O trabalho foi organizado em **duas etapas**, permitindo acompanhar a evolução do sistema desde as funcionalidades básicas de gerenciamento de contas até a implementação de movimentações financeiras.
+O projeto tem como objetivo aplicar os conhecimentos adquiridos durante as aulas por meio da criação de um sistema capaz de cadastrar contas bancárias, realizar operações financeiras e armazenar informações.
 
-O projeto utiliza estruturas condicionais, laços de repetição, arrays, strings e validações para simular o funcionamento de um sistema bancário no terminal.
-
----
-
-## 🚀 Funcionalidades
-
-O sistema permite realizar as seguintes operações:
-
-- ✅ Cadastrar contas bancárias.
-- ✅ Listar contas cadastradas.
-- ✅ Consultar contas pelo número.
-- ✅ Realizar depósitos.
-- ✅ Efetuar saques com verificação de saldo.
-- ✅ Transferir valores entre contas.
-- ✅ Consultar o extrato de movimentações.
-- ✅ Validar dados informados pelo usuário.
-- ✅ Impedir operações com valores inválidos.
-- ✅ Registrar movimentações financeiras.
-
-### 🔐 Validações implementadas
-
-Para garantir maior consistência nas operações, o sistema possui verificações como:
-
-- CPF contendo exatamente 11 dígitos numéricos.
-- Número de conta não duplicado.
-- Tipo de conta válido (corrente ou poupança).
-- Valores monetários positivos nas movimentações.
-- Saldo suficiente para realizar saques e transferências.
-- Existência e situação ativa das contas envolvidas.
+O desenvolvimento foi dividido em **três etapas**, permitindo acompanhar a evolução do código, desde um sistema básico até a implementação de persistência de dados em arquivos.
 
 ---
 
-## 📂 Estrutura do projeto
+## 📚 Etapas do desenvolvimento
+
+| Etapa | Descrição | Conteúdos principais |
+|---|---|---|
+| Etapa 1 | Gerenciamento básico de uma conta | Variáveis, condicionais e repetições |
+| Etapa 2 | Múltiplas contas e operações bancárias | Arrays, laços e movimentações |
+| Etapa 3 | Armazenamento permanente dos dados | Funções e manipulação de arquivos |
+
+### 📘 Etapa 1 — Fundamentos do sistema bancário
+
+A primeira etapa foi dedicada à construção da estrutura inicial do sistema.
+
+O programa permite cadastrar e gerenciar uma conta bancária por meio de um menu interativo.
+
+**Funcionalidades desenvolvidas:**
+
+- Cadastrar uma conta bancária.
+- Informar nome e CPF do titular.
+- Definir o número da conta.
+- Escolher entre conta corrente e poupança.
+- Informar o saldo inicial.
+- Consultar os dados da conta.
+- Verificar o saldo disponível.
+- Alterar o tipo da conta.
+- Ativar ou desativar uma conta.
+- Validar as informações fornecidas pelo usuário.
+
+**Conceitos utilizados:**
+
+- Variáveis e tipos de dados.
+- Entrada e saída com `cin` e `cout`.
+- Estruturas condicionais `if` e `else`.
+- Estrutura de seleção `switch`.
+- Estruturas de repetição `while` e `do-while`.
+- Manipulação de strings.
+
+📂 [Acessar código da Etapa 1](./sistema-bancario-etapa1/sistemabancario.cpp)
+
+---
+
+### 📗 Etapa 2 — Múltiplas contas e movimentações
+
+Na segunda etapa, o sistema foi ampliado para permitir o gerenciamento de várias contas bancárias.
+
+Foram implementados **arrays paralelos**, possibilitando armazenar os dados de até 100 contas e registrar até 500 movimentações financeiras.
+
+**Funcionalidades desenvolvidas:**
+
+- Cadastrar múltiplas contas.
+- Listar contas cadastradas.
+- Consultar uma conta pelo número.
+- Realizar depósitos.
+- Realizar saques.
+- Verificar saldo suficiente antes de um saque.
+- Transferir valores entre contas.
+- Consultar o extrato de movimentações.
+- Impedir o cadastro de números de conta duplicados.
+- Validar as operações financeiras.
+
+**Registro de movimentações:**
+
+| Código | Operação | Efeito |
+|---|---|---|
+| D | Depósito | Adiciona valor ao saldo |
+| S | Saque | Subtrai valor do saldo |
+| Transferência | Saída + entrada | Atualiza duas contas |
+
+Cada transferência gera dois registros no histórico: um saque na conta de origem e um depósito na conta de destino.
+
+**Conceitos utilizados:**
+
+- Arrays unidimensionais.
+- Laços de repetição `for`.
+- Busca de informações em arrays.
+- Controle de índices.
+- Estruturas condicionais.
+- Validação de dados.
+- Registro de movimentações.
+
+**Observação:** nesta etapa, as informações são armazenadas apenas na memória. Ao encerrar o programa, os dados são perdidos.
+
+📂 [Acessar código da Etapa 2](./sistema-bancario-etapa2/main.cpp)
+
+---
+
+### 📙 Etapa 3 — Persistência de dados em arquivos
+
+A terceira etapa teve como objetivo implementar o armazenamento permanente das informações.
+
+O sistema mantém as funcionalidades da etapa anterior, mas agora utiliza arquivos de texto para preservar contas e movimentações após o encerramento do programa.
+
+**Funcionalidades implementadas:**
+
+- Salvar automaticamente as contas cadastradas.
+- Recuperar contas ao iniciar o sistema.
+- Armazenar os saldos atualizados.
+- Salvar o histórico de movimentações.
+- Recuperar depósitos, saques e transferências anteriores.
+- Atualizar os arquivos após operações financeiras.
+- Organizar as operações de leitura e gravação em funções.
+
+**Funções principais:**
+
+| Função | Responsabilidade |
+|---|---|
+| `salvarContas()` | Gravar os dados das contas |
+| `carregarContas()` | Recuperar as contas armazenadas |
+| `salvarMovimentacoes()` | Gravar o histórico financeiro |
+| `carregarMovimentacoes()` | Recuperar movimentações anteriores |
+
+### 📄 Arquivos utilizados
+
+**contas.txt**
+
+Responsável por armazenar:
+
+- Número da conta.
+- Nome do titular.
+- CPF.
+- Tipo da conta.
+- Saldo.
+- Situação da conta.
+
+Exemplo de registro:
 
 ```text
-Sistema-Bancario/
+1001;Ana Silva;12345678900;1;700.00;1
+1002;Bruno Souza;98765432100;2;800.00;1
+```
+
+**movimentacoes.txt**
+
+Responsável por armazenar o histórico financeiro.
+
+Exemplo:
+
+```text
+1001;D;500.00
+1001;S;200.00
+1002;D;300.00
+```
+
+Os dados são recuperados quando o sistema é executado novamente.
+
+**Conceitos utilizados:**
+
+- Biblioteca `fstream`.
+- Manipulação de arquivos de texto.
+- `ofstream` para gravação.
+- `ifstream` para leitura.
+- `is_open()` para verificar a abertura.
+- `getline()` para leitura.
+- `close()` para fechar arquivos.
+- Funções com parâmetros.
+- Passagem de arrays para funções.
+- Organização e reutilização de código.
+
+📂 [Acessar código da Etapa 3](./sistema-bancario-etapa3/main.cpp)
+
+---
+
+## 📂 Estrutura do repositório
+
+```text
+sistema-bancario-inf101/
 │
 ├── sistema-bancario-etapa1/
-│   └── Código da primeira etapa
+│   └── sistemabancario.cpp
 │
 ├── sistema-bancario-etapa2/
-│   └── Código da segunda etapa
+│   └── main.cpp
+│
+├── sistema-bancario-etapa3/
+│   └── main.cpp
 │
 └── README.md
 ```
 
-### 📘 Etapa 1 — Gerenciamento de contas
-
-A primeira etapa apresenta a estrutura inicial do sistema bancário e trabalha os fundamentos necessários para cadastrar e gerenciar contas.
-
-**Principais conceitos:**
-- Variáveis e tipos de dados.
-- Arrays para armazenamento.
-- Estruturas condicionais.
-- Estruturas de repetição.
-- Entrada e saída de dados.
-- Menus interativos.
-
-### 📗 Etapa 2 — Operações bancárias
-
-A segunda etapa amplia o sistema, implementando operações financeiras e controles para garantir que as movimentações ocorram corretamente.
-
-**Principais recursos:**
-- Depósitos e saques.
-- Transferências bancárias.
-- Consulta de extrato.
-- Registro de movimentações.
-- Verificação de saldo.
-- Tratamento de entradas inválidas.
+Os arquivos `contas.txt` e `movimentacoes.txt` são gerados durante a execução da terceira etapa.
 
 ---
 
@@ -87,56 +202,65 @@ A segunda etapa amplia o sistema, implementando operações financeiras e contro
 | Tecnologia | Finalidade |
 |---|---|
 | C++ | Desenvolvimento do sistema |
-| Biblioteca iostream | Entrada e saída de dados |
-| Biblioteca string | Manipulação de textos |
-| Biblioteca iomanip | Formatação de valores |
-| Biblioteca limits | Tratamento de entradas |
-| Git | Versionamento do código |
-| GitHub | Hospedagem do repositório |
+| iostream | Entrada e saída de dados |
+| string | Manipulação de textos |
+| iomanip | Formatação de valores |
+| limits | Tratamento de entradas |
+| cmath | Validação de valores numéricos |
+| fstream | Leitura e gravação em arquivos |
+| sstream | Processamento de registros |
+| Git | Controle de versões |
+| GitHub | Organização e publicação do projeto |
 
 ---
 
-## 💻 Como executar
+## 💻 Como executar o projeto
 
-### 1. Clone o repositório
-
-```bash
-git clone URL_DO_REPOSITORIO
-```
-
-### 2. Acesse a pasta do projeto
+### 1. Clonar o repositório
 
 ```bash
-cd Sistema-Bancario
+git clone https://github.com/pereiralp/sistema-bancario-inf101.git
 ```
 
-### 3. Compile o programa
-
-Com o compilador G++ instalado, entre na pasta da etapa desejada e execute:
+### 2. Acessar a pasta do projeto
 
 ```bash
-g++ main.cpp -o sistema
+cd sistema-bancario-inf101
 ```
 
-> Substitua `main.cpp` pelo nome real do arquivo C++ da etapa escolhida.
+### 3. Escolher a etapa
 
-### 4. Execute o sistema
+Para executar a versão mais recente:
 
-No Windows (PowerShell):
+```bash
+cd sistema-bancario-etapa3
+```
+
+### 4. Compilar o código
+
+Com o G++ instalado:
+
+```bash
+g++ -std=c++17 main.cpp -o banco-inf101
+```
+
+### 5. Executar o programa
+
+**Windows:**
 
 ```powershell
-.\sistema.exe
+.\banco-inf101.exe
 ```
 
-No Linux:
+**Linux:**
 
 ```bash
-./sistema
+./banco-inf101
 ```
 
 ---
 
-## 🖥️ Menu do sistema
+## 🖥️ Menu do sistema — Etapas 2 e 3
 
 ```text
 *********************************
@@ -157,43 +281,64 @@ Selecione uma opcao:
 
 ---
 
+## 🧪 Testando a Etapa 3
+
+Para verificar o funcionamento do armazenamento permanente:
+
+1. Execute o sistema.
+2. Cadastre duas contas bancárias.
+3. Realize depósitos, saques ou transferências.
+4. Consulte os saldos e extratos.
+5. Encerre o programa.
+6. Execute o sistema novamente.
+7. Consulte as contas e os extratos anteriores.
+
+O objetivo é verificar se os arquivos preservaram as informações e se os dados foram carregados corretamente.
+
+---
+
 ## 🧠 Conhecimentos desenvolvidos
 
-Durante o desenvolvimento deste projeto, foram praticados conceitos importantes da programação:
+Durante o desenvolvimento do Banco INF101, foram praticados:
 
-- Organização e estruturação de código em C++.
+- Lógica de programação.
 - Desenvolvimento de algoritmos.
-- Manipulação de arrays paralelos.
-- Implementação de regras de negócio.
-- Validação de entradas.
-- Controle de fluxo com `if`, `switch`, `for` e `do while`.
-- Lógica de movimentações financeiras.
-- Identificação e correção de erros.
+- Estruturas condicionais e de repetição.
+- Manipulação de variáveis e strings.
+- Utilização de arrays.
+- Busca e validação de informações.
+- Controle de operações financeiras.
+- Desenvolvimento de funções.
+- Leitura e gravação em arquivos.
+- Organização e manutenção de código.
+- Versionamento com Git e GitHub.
+
+Cada etapa contribuiu para a evolução do sistema e para a aplicação prática dos conteúdos apresentados durante a disciplina.
 
 ---
 
-## ⚠️ Limitações do projeto
+## ⚠️ Limitações do sistema
 
-Este sistema foi desenvolvido para fins educacionais.
+O Banco INF101 foi desenvolvido exclusivamente para fins acadêmicos.
 
-- Os dados ficam armazenados temporariamente na memória.
-- As informações são perdidas ao encerrar o programa.
-- Não existe integração com bancos reais.
-- O histórico possui capacidade limitada.
-- Não utiliza banco de dados ou autenticação.
-
-Essas limitações representam oportunidades para futuras melhorias.
+- Não possui integração com instituições financeiras reais.
+- Não utiliza banco de dados.
+- Não possui sistema de autenticação.
+- Possui limite de contas e movimentações.
+- Utiliza arquivos locais para armazenamento.
+- Não implementa mecanismos de segurança exigidos em sistemas bancários reais.
 
 ---
 
-## 🔮 Melhorias futuras
+## 🚀 Possíveis melhorias futuras
 
-- [ ] Implementar persistência de dados em arquivos.
-- [ ] Integrar um banco de dados.
-- [ ] Criar autenticação para clientes.
-- [ ] Implementar encerramento de contas.
-- [ ] Adicionar datas e horários às movimentações.
-- [ ] Desenvolver uma interface gráfica.
+- [ ] Implementar banco de dados.
+- [ ] Criar autenticação de usuários.
+- [ ] Registrar data e horário das movimentações.
+- [ ] Implementar encerramento definitivo de contas.
+- [ ] Criar uma interface gráfica.
+- [ ] Desenvolver relatórios financeiros.
+- [ ] Implementar testes automatizados.
 
 ---
 
@@ -201,14 +346,18 @@ Essas limitações representam oportunidades para futuras melhorias.
 
 **Filipe Pereira dos Santos**
 
-Estudante e desenvolvedor em formação, com interesse em desenvolvimento de software e aprendizado contínuo.
+**Disciplina:** INF101 — Programação de Computadores I  
+**Instituição:** Centro Universitário de Viçosa — UNIVIÇOSA  
+**Linguagem:** C++
 
-**GitHub:** [filipepereiradossantos](https://github.com/pereiralp)
+**GitHub:** [@pereiralp](https://github.com/pereiralp)
 
 ---
 
 <p align="center">
-  <strong>🏦 Sistema Bancário em C++</strong>
-  
-  <em>Projeto acadêmico desenvolvido para praticar lógica de programação e fundamentos da linguagem C++.</em>
+  <strong>🏦 Banco INF101 — Sistema Bancário em C++</strong>
+</p>
+
+<p align="center">
+  Projeto acadêmico desenvolvido em três etapas, aplicando fundamentos de programação, operações bancárias e persistência de dados.
 </p>
